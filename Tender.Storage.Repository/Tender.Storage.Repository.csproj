@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tender.Models.Infrastructure\Tender.Models.Infrastructure.csproj" />
+    <ProjectReference Include="..\Tender.Shared\Tender.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
