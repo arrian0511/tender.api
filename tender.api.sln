@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tender.api", "tender.api\tender.api.csproj", "{A68395A8-16C3-4545-B697-F64F23BE34BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tender.Api", "Tender.Api\Tender.Api.csproj", "{2B1006A5-BA9F-4410-83FE-07BCBAAC522D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tender.Models", "Tender.Model\Tender.Models.csproj", "{D34EEE6E-4E4A-4729-92C0-5D03A48DBFD1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tender.Storage.Context", "Tender.Storage.Context\Tender.Storage.Context.csproj", "{1D642592-7DDD-464F-A6BE-E7C2A0F9F8B3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tender.Storage.Repository", "Tender.Storage.Repository\Tender.Storage.Repository.csproj", "{8C077EBB-7C89-40CA-86AF-B4AAA17C66AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tender.Shared", "Tender.Shared\Tender.Shared.csproj", "{9B990C4D-2895-4BAE-9CD1-E6D2B1E6B71F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tender.Models.Infrastructure", "Tender.Models.Infrastructure\Tender.Models.Infrastructure.csproj", "{20A1240C-C6D2-49EE-9872-A2B273B89E2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tender.Services", "Tender.Services\Tender.Services.csproj", "{B94155F4-091B-41BB-A579-307F0500FF0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +23,34 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A68395A8-16C3-4545-B697-F64F23BE34BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A68395A8-16C3-4545-B697-F64F23BE34BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A68395A8-16C3-4545-B697-F64F23BE34BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A68395A8-16C3-4545-B697-F64F23BE34BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B1006A5-BA9F-4410-83FE-07BCBAAC522D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B1006A5-BA9F-4410-83FE-07BCBAAC522D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B1006A5-BA9F-4410-83FE-07BCBAAC522D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B1006A5-BA9F-4410-83FE-07BCBAAC522D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D34EEE6E-4E4A-4729-92C0-5D03A48DBFD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D34EEE6E-4E4A-4729-92C0-5D03A48DBFD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D34EEE6E-4E4A-4729-92C0-5D03A48DBFD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D34EEE6E-4E4A-4729-92C0-5D03A48DBFD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D642592-7DDD-464F-A6BE-E7C2A0F9F8B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D642592-7DDD-464F-A6BE-E7C2A0F9F8B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D642592-7DDD-464F-A6BE-E7C2A0F9F8B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D642592-7DDD-464F-A6BE-E7C2A0F9F8B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C077EBB-7C89-40CA-86AF-B4AAA17C66AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C077EBB-7C89-40CA-86AF-B4AAA17C66AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C077EBB-7C89-40CA-86AF-B4AAA17C66AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C077EBB-7C89-40CA-86AF-B4AAA17C66AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B990C4D-2895-4BAE-9CD1-E6D2B1E6B71F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B990C4D-2895-4BAE-9CD1-E6D2B1E6B71F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B990C4D-2895-4BAE-9CD1-E6D2B1E6B71F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B990C4D-2895-4BAE-9CD1-E6D2B1E6B71F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20A1240C-C6D2-49EE-9872-A2B273B89E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20A1240C-C6D2-49EE-9872-A2B273B89E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20A1240C-C6D2-49EE-9872-A2B273B89E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20A1240C-C6D2-49EE-9872-A2B273B89E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B94155F4-091B-41BB-A579-307F0500FF0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B94155F4-091B-41BB-A579-307F0500FF0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B94155F4-091B-41BB-A579-307F0500FF0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B94155F4-091B-41BB-A579-307F0500FF0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
