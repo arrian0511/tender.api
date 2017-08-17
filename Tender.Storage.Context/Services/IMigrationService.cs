@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Tender.Storage.Context
+﻿namespace Tender.Storage.Context
 {
     /// <summary>
     /// Migration Context Interface
     /// </summary>
-    public interface IMigrationContext
+    public interface IMigrationService
     {
         /// <summary>
         /// This will start the DB Migration Automatically

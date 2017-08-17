@@ -7,5 +7,6 @@ namespace Tender.Shared
     public class TenderConstants
     {
         public const string ApiRoutePrefix = "api/";
+        public const string CorsPolicyName = "TenderApiCorsPolicy";
     }
 }

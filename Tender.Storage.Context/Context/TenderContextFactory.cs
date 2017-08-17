@@ -1,14 +1,16 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
+using System;
 
 namespace Tender.Storage.Context
 {
     /// <summary>
-    /// Configuration Factory
+    /// Tender Context Factory Class
+    /// `Note` This class is use to manually or update the database by using
+    /// dotnet ef migrations add InitialMigration or update
     /// </summary>
-    public class ConfigureFactory : IDbContextFactory<TenderContext>
+    public class TenderContextFactory : IDbContextFactory<TenderContext>
     {
         /// <summary>
         /// This is the method that gets called by the “dotnet ef database update” command when you deploy your migrations.
@@ -18,9 +20,11 @@ namespace Tender.Storage.Context
         /// <returns>TenderContext Instance</returns>
         public TenderContext Create(DbContextFactoryOptions options)
         {
-            var connection = @"Server=(localdb)\mssqllocaldb;Database=TenderDB;Trusted_Connection=True;";
+            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=TenderDB;Trusted_Connection=True;";
+
+            // Return the whole db context for configuration
             DbContextOptionsBuilder<TenderContext> _opt = new DbContextOptionsBuilder<TenderContext>();
-            _opt.UseSqlServer(connection, (act) => act.MigrationsAssembly("Tender.Storage.Context"));
+            _opt.UseSqlServer(connectionString);
             return new Context.TenderContext(_opt.Options);
         }
     }

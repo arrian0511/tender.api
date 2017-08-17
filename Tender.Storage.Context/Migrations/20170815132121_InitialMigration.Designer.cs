@@ -8,7 +8,7 @@ using Tender.Storage.Context;
 namespace Tender.Storage.Context.Migrations
 {
     [DbContext(typeof(TenderContext))]
-    [Migration("20170813142824_InitialMigration")]
+    [Migration("20170815132121_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
