@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tender.Shared", "Tender.Sha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tender.Models.Infrastructure", "Tender.Models.Infrastructure\Tender.Models.Infrastructure.csproj", "{20A1240C-C6D2-49EE-9872-A2B273B89E2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tender.Services", "Tender.Services\Tender.Services.csproj", "{B94155F4-091B-41BB-A579-307F0500FF0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tender.Services", "Tender.Services\Tender.Services.csproj", "{B94155F4-091B-41BB-A579-307F0500FF0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

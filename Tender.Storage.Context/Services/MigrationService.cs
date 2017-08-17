@@ -1,13 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 
 namespace Tender.Storage.Context
 {
-    public class MigrationContext : IMigrationContext
+    public class MigrationService : IMigrationService
     {
         private TenderContext _context;
 
@@ -15,7 +13,7 @@ namespace Tender.Storage.Context
         /// Constructor
         /// </summary>
         /// <param name="context"></param>
-        public MigrationContext(TenderContext context)
+        public MigrationService(TenderContext context)
         {
             this._context = context;
         }
@@ -26,27 +24,18 @@ namespace Tender.Storage.Context
         /// </summary>
         public void StartMigration()
         {
-            try
-            {
-                if (this._context.Database.GetPendingMigrations().Any())
-                {
+            try {
+                if (this._context.Database.GetPendingMigrations().Any()) {
                     this._context.Database.Migrate();
                     Debug.WriteLine("Successfully migrated the database.");
                 }
-                else
-                {
+                else {
                     Debug.WriteLine("Database is up to date.");
                 }
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 Debug.WriteLine(ex.Message);
             }
-        }
-
-        public static void CreateInstance()
-        {
-            
         }
     }
 }

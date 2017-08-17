@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Tender.Storage.Context;
 using Tender.Services;
+using Tender.Shared;
 
 namespace Tender.Api
 {
@@ -37,19 +38,29 @@ namespace Tender.Api
         /// <param name="services">[in] Services</param>
         public void ConfigureServices(IServiceCollection services)
         {
+            // Configure Cors Policy
+            services.AddCors(options =>
+            {
+                options.AddPolicy(TenderConstants.CorsPolicyName, builder =>
+                {
+                    builder.AllowAnyOrigin();
+                    builder.AllowAnyMethod();
+                    builder.AllowAnyHeader();
+                    builder.AllowCredentials();
+                });
+            });
+
             // Add framework services.
             services.AddMvc();
 
             // Add Db context instance
-            services.AddDbContext<TenderContext>(options =>
+            services.AddTransient(provider =>
             {
-                var connection = @"Server=(LocalDb)\MSSQLLocalDB;Database=TenderDB;Trusted_Connection=True;";
-                options.UseSqlServer(connection);
+                return new TenderContext(Configuration.GetConnectionString("(default)"));
             });
 
             // Add Migration context
-            services.AddScoped<IMigrationContext, MigrationContext>();
-            services.AddScoped<IStorageMigrationService, StorageMigrationService>();
+            services.AddScoped<IMigrationService, MigrationService>();
 
             // Add Entity Service
             services.AddScoped<ITenderTaskManagementService, TenderTaskManagementService>();
@@ -78,10 +89,12 @@ namespace Tender.Api
             // Start database migration by using the services itself
             using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
-                serviceScope.ServiceProvider.GetService<IStorageMigrationService>().StartMigration();
+                serviceScope.ServiceProvider.GetService<IMigrationService>().StartMigration();
             }
 
+            // Setup startup data of the application
             app
+                .UseCors(TenderConstants.CorsPolicyName)
                 .UseMvc(routes =>
                 {
                     routes.MapRoute(

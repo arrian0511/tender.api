@@ -22,6 +22,15 @@ namespace Tender.Storage.Context
         }
 
         /// <summary>
+        /// Constructor
+        /// </summary>
+        public TenderContext(string connectionString)
+            : base(new DbContextOptionsBuilder<TenderContext>()
+                  .UseSqlServer(connectionString).Options)
+        {
+        }
+
+        /// <summary>
         /// On Model Creation
         /// </summary>
         /// <param name="modelBuilder">[in] Model Builder</param>

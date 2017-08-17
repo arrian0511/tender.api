@@ -7,13 +7,13 @@ namespace Tender.Services
 {
     public class StorageMigrationService : IStorageMigrationService
     {
-        private readonly IMigrationContext _migrationContext;
+        private readonly IMigrationService _migrationContext;
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="migrationContext">Migration context instance</param>
-        public StorageMigrationService(IMigrationContext migrationContext)
+        public StorageMigrationService(IMigrationService migrationContext)
         {
             this._migrationContext = migrationContext;
         }
